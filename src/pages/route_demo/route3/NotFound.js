@@ -1,4 +1,4 @@
-const About = (props) => {
-  return <p>this is about</p>
+const NotFound = (props) => {
+  return <p>404 找不到页面</p>
 };
-export default About
+export default NotFound

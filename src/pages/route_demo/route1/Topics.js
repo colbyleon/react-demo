@@ -1,4 +1,4 @@
-const Topic = (props) => {
+const Topics = (props) => {
   return <p>this is topic</p>
 };
-export default Topic
+export default Topics
