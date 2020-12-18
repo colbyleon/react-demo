@@ -1,6 +1,7 @@
 import {Component} from "react";
-import {Card, Button, Icon, Modal} from "antd";
+import {Card, Button, Modal} from "antd";
 import './ui.less'
+
 
 class Modals extends Component {
   state = {}
@@ -12,6 +13,19 @@ class Modals extends Component {
 
   handleClick = (action, type) => {
     this.setState(({[type]: false}))
+  }
+
+  handleConfirm = (type) => {
+    Modal[type]({
+      title: 'Do you Want to delete these items?',
+      content: 'Some descriptions',
+      onOk() {
+        console.log('OK');
+      },
+      onCancel() {
+        console.log('Cancel');
+      },
+    });
   }
 
   render() {
@@ -58,6 +72,14 @@ class Modals extends Component {
         >
           嘿嘿嘿
         </Modal>
+
+        <Card title="确认框" className="card-wrap">
+          <Button onClick={() => this.handleConfirm('confirm')}>Confirm</Button>
+          <Button onClick={() => this.handleConfirm('warning')} type="dashed">Warning</Button>
+          <Button onClick={() => this.handleConfirm('success')} type="dashed">Success</Button>
+          <Button onClick={() => this.handleConfirm('info')} type="dashed">Info</Button>
+          <Button onClick={() => this.handleConfirm('error')} type="dashed">Error</Button>
+        </Card>
       </div>
     );
   }

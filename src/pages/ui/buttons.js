@@ -6,7 +6,7 @@ class Buttons extends Component {
   state = {
     loading: false,
     iconLoading: false,
-    value2:'Pear'
+    value2: 'Pear'
   };
 
   enterLoading = () => {
@@ -21,9 +21,9 @@ class Buttons extends Component {
 
   render() {
     const options = [
-      { label: 'Apple', value: 'Apple' },
-      { label: 'Pear', value: 'Pear' },
-      { label: 'Orange', value: 'Orange' },
+      {label: 'Apple', value: 'Apple'},
+      {label: 'Pear', value: 'Pear'},
+      {label: 'Orange', value: 'Orange'},
     ];
 
     return (
@@ -82,7 +82,7 @@ class Buttons extends Component {
                   icon="check"
           />
         </Card>
-        <Card title="按钮组" className="card-wrap">
+        <Card title="按钮组" style={{marginBottom: 10}}>
           <Button.Group>
             <Button type="primary"><Icon type="left"/>返回</Button>
             <Button type="primary">1</Button>
@@ -91,8 +91,8 @@ class Buttons extends Component {
         </Card>
         <Card title="Radio" className="card-wrap">
           <Radio.Group options={options}
-                       onChange={(e)=>this.setState(({value2:e.target.value}))}
-                       value={this.state.value2} />
+                       onChange={(e) => this.setState(({value2: e.target.value}))}
+                       value={this.state.value2}/>
 
         </Card>
       </div>

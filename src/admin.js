@@ -4,7 +4,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import NavLeft from './components/NavLeft'
 import './style/common.less'
-import {Route, Switch} from "react-router-dom";
+import {Redirect, Route, Switch} from "react-router-dom";
 import NotFound from "./pages/nomatch";
 import {contentLayout} from './config/routerData'
 
@@ -31,6 +31,7 @@ export default class Admin extends Component {
             <Header/>
             <Row className="content">
               <Switch>
+                <Redirect to="/home" path="/" exact/>
                 {routes}
                 <Route component={NotFound}/>
               </Switch>
